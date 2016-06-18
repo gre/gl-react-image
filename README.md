@@ -5,11 +5,11 @@
 ## `{Image}` Props
 
 - `source` **(required)**: the image URL. You can also provide a `{ width, height, uri }` or a string URL.
-- `imageSize` **required *if use with source:String format***: a `{ width, height }` object that is the image dimension. It's your responsibility to load the image and get its dimension before rendering with `gl-react-image`. In React Native, you can use [`Image.getSize`](https://facebook.github.io/react-native/docs/image.html#getsize).
+- `imageSize` **(required, if use source:String format)**: a `{ width, height }` object that is the image dimension. It's your responsibility to load the image and get its dimension before rendering with `gl-react-image`. In React Native, you can use [`Image.getSize`](https://facebook.github.io/react-native/docs/image.html#getsize).
 - `resizeMode`: cover | stretch | contain : This implement the exact same [React Native Image resizeMode prop](https://facebook.github.io/react-native/docs/image.html#resizemode) in OpenGL.
 - `center` and `zoom` props can be used with `resizeMode=cover` to define the cover crop position:
-  - `center`, an [x, y] array, defines the gravity of the crop *(x and y are in [0, 1] bound)*.
-  - `zoom` should be a value in `] 0 , 1 ]` bound. 1 means no zoom, more value is close to 0, more the zoom is important.
+  - `center`, an [x,y] array, defines the gravity of the crop *(x and y are in [0, 1] bound)*.
+  - `zoom` should be a value in **] 0 , 1 ]** bound. 1 means no zoom, more value is close to 0, more the zoom is important.
 
 ## Example
 
@@ -24,7 +24,14 @@
 />
 ```
 
-alternative syntax is to use only `source` via a `{uri,width,height}` object.
+alternative syntax is to use only `source` via a `{ uri, width, height }` object.
+
+```html
+<GLImage
+  source={{ uri: "http://i.imgur.com/tCatS2c.jpg", width: 1024, height: 693 }}
+  resizeMode="stretch"
+/>
+```
 
 ```html
 <GLImage
