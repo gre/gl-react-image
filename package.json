@@ -6,7 +6,8 @@
   "scripts": {
     "compile": "rm -rf lib/ && babel --presets es2015,stage-1,react --source-maps -d lib src",
     "prepublish": "npm run compile",
-    "example": "cd example && budo index.js -- -t [ babelify --presets es2015,stage-1,react ]"
+    "example": "cd example && budo index.js -- -t [ babelify --presets es2015,stage-1,react ]",
+    "example-build": "cd example && browserify -t [ babelify --presets es2015,stage-1,react ] index.js > ../index.js && cp index.html .."
   },
   "peerDependencies": {
     "gl-react": "~2.2.0"
