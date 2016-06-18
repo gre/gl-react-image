@@ -1,4 +1,4 @@
-# gl-react-blur ![](https://img.shields.io/npm/v/gl-react-image.svg) ![](https://img.shields.io/badge/gl--react-~2.2-05F561.svg) ![](https://img.shields.io/badge/gl--react-dom%20%7C%20native-f90.svg)
+# gl-react-image ![](https://img.shields.io/npm/v/gl-react-image.svg) ![](https://img.shields.io/badge/gl--react-~2.2-05F561.svg) ![](https://img.shields.io/badge/gl--react-dom%20%7C%20native-f90.svg)
 
 [Universal](https://projectseptemberinc.gitbooks.io/gl-react/content/docs/universal.html) gl-react **Image that implements [resizeMode prop](https://facebook.github.io/react-native/docs/image.html#resizemode)** in OpenGL.
 
@@ -63,7 +63,7 @@ alternative syntax is to use only `source` via a `{uri,width,height}` object.
 import React from "react";
 import {render} from "react-dom";
 import {Surface} from "gl-react-dom";
-const {Image: GLImage} = require("gl-react-blur");
+const {Image: GLImage} = require("gl-react-image");
 
 const load = src => new Promise((success, failure) => {
   const img = new Image();
@@ -92,7 +92,7 @@ load("http://i.imgur.com/tCatS2c.jpg")
 import React from "react";
 import {Image, View} from "react-native";
 import {Surface} from "gl-react-dom";
-const {Image: GLImage} = require("gl-react-blur");
+const {Image: GLImage} = require("gl-react-image");
 
 export default class Example extends Component {
   static propTypes = {
