@@ -1,6 +1,6 @@
 {
   "name": "gl-react-image",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Universal gl-react Image that implements resizeMode in OpenGL",
   "main": "lib/index.js",
   "scripts": {
