@@ -64,6 +64,8 @@ alternative syntax is to use only `source` via a `{ uri, width, height }` object
 />
 ```
 
+> If you don't know the image dimension by advance, you can still load the image on your side and extract it out:
+
 ### Web usage example
 
 ```js
