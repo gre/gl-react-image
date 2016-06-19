@@ -64,22 +64,10 @@ export default GL.createComponent(
     }
     const ratio = width / height;
     const imageRatio = imageSize.width / imageSize.height;
-    if (ratio > imageRatio) {
-      crop = [
-        (1 - ratio / imageRatio) / 2,
-        0,
-        ratio / imageRatio,
-        1
-      ];
-    }
-    else {
-      crop = [
-        0,
-        (1 - imageRatio / ratio) / 2,
-        1,
-        imageRatio / ratio
-      ];
-    }
+    crop =
+      ratio > imageRatio
+      ? [ (1 - ratio / imageRatio) / 2, 0, ratio / imageRatio, 1 ]
+      : [ 0, (1 - imageRatio / ratio) / 2, 1, imageRatio / ratio ];
     break;
   }
   case "stretch":
