@@ -1,6 +1,6 @@
 {
   "name": "gl-react-image",
-  "version": "3.0.1",
+  "version": "3.0.2",
   "description": "Universal gl-react cropper that implements various resizeMode in OpenGL",
   "main": "lib/index.js",
   "scripts": {
