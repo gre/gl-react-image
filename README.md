@@ -12,12 +12,15 @@ yarn add gl-react-image
 
 ```js
 import GLImage from "gl-react-image";
+import {Surface} from "gl-react-dom";// or "gl-react-native" or "gl-react-expo" or ..
 
-<GLImage
-  source="http://i.imgur.com/tCatS2c.jpg"
-  imageSize={{ width: 1024, height: 693 }}
-  resizeMode="stretch"
-/>
+<Surface ...>
+  <GLImage
+    source="http://i.imgur.com/tCatS2c.jpg"
+    imageSize={{ width: 1024, height: 693 }}
+    resizeMode="stretch"
+  />
+</Surface>
 ```
 
 ## `GLImage` Props
