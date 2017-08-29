@@ -1,0 +1,23 @@
+{
+  "name": "example",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "gl-react": "next",
+    "gl-react-dom": "next",
+    "gl-react-image": "file:..",
+    "react": "next",
+    "react-dom": "next"
+  },
+  "devDependencies": {
+    "react-scripts": "1.0.12"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject",
+    "deploy":
+      "react-scripts build && surge -p build -d https://gl-react-image.surge.sh"
+  }
+}
