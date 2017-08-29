@@ -1,12 +1,10 @@
 {
   "name": "gl-react-image",
-  "version": "3.0.0",
-  "description":
-    "Universal gl-react cropper that implements various resizeMode in OpenGL",
+  "version": "3.0.1",
+  "description": "Universal gl-react cropper that implements various resizeMode in OpenGL",
   "main": "lib/index.js",
   "scripts": {
-    "compile":
-      "rm -rf lib/ && babel --presets es2015,stage-1,react --source-maps -d lib src && flow-copy-source src lib",
+    "compile": "rm -rf lib/ && babel --presets es2015,stage-1,react --source-maps -d lib src && flow-copy-source src lib",
     "prepublish": "npm run compile"
   },
   "peerDependencies": {
@@ -23,7 +21,12 @@
     "type": "git",
     "url": "git+ssh://git@github.com/gre/gl-react-image.git"
   },
-  "keywords": ["gl-react", "image", "gl", "react"],
+  "keywords": [
+    "gl-react",
+    "image",
+    "gl",
+    "react"
+  ],
   "author": "Gaëtan Renaudeau",
   "license": "MIT",
   "bugs": {
