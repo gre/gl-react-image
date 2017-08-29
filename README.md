@@ -4,7 +4,7 @@ Universal [gl-react](https://github.com/gre/gl-react) module **that implements [
 
 [-> Example App <-](https://gl-react-image.surge.sh/)
 
-The library is called `gl-react-image` but barely anything can be actually the source, it can be a video, a canvas, another stack of effects,... anything that gl-react support as a texture.
+The library is called `gl-react-image` but barely anything can be the source, it can be a video, a canvas, another stack of effects,... (anything that gl-react support as a texture)
 
 ```sh
 yarn add gl-react-image
@@ -17,7 +17,6 @@ import {Surface} from "gl-react-dom";// or "gl-react-native" or "gl-react-expo" 
 <Surface ...>
   <GLImage
     source="http://i.imgur.com/tCatS2c.jpg"
-    imageSize={{ width: 1024, height: 693 }}
     resizeMode="stretch"
   />
 </Surface>
