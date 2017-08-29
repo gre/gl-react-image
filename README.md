@@ -1,6 +1,6 @@
 # gl-react-image ![](https://img.shields.io/npm/v/gl-react-image.svg) ![](https://img.shields.io/badge/gl--react-3-05F561.svg) ![](https://img.shields.io/badge/gl--react-dom%20%7C%20native-f90.svg)
 
-[Universal](https://projectseptemberinc.gitbooks.io/gl-react/content/docs/universal.html) gl-react **Image that implements [resizeMode prop](https://facebook.github.io/react-native/docs/image.html#resizemode)** in OpenGL.
+[Universal](https://projectseptemberinc.gitbooks.io/gl-react/content/docs/universal.html) gl-react module **that implements [resizeMode prop](https://facebook.github.io/react-native/docs/image.html#resizemode)** in OpenGL.
 
 [-> Example App <-](https://gl-react-image.surge.sh/)
 
