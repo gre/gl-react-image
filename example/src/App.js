@@ -20,12 +20,21 @@ const makeEditor = (name: string, reduceValue: (oldValue: *) => *) => ({
   </span>
 );
 
-const resizeModes = ["stretch", "contain", "cover"];
+const resizeModes = ["stretch", "contain", "cover", "free"];
 const ResizeModeEditor = makeEditor(
   "resizeMode",
-  oldValue => resizeModes[(resizeModes.indexOf(oldValue) + 1) % 3]
+  oldValue =>
+    resizeModes[(resizeModes.indexOf(oldValue) + 1) % resizeModes.length]
 );
-const ZoomEditor = makeEditor("zoom", () => Math.ceil(10 * Math.random()) / 10);
+const CoverZoomEditor = makeEditor(
+  "zoom",
+  () => Math.ceil(10 * Math.random() + 10 * Math.random() * Math.random()) / 10
+);
+
+const FreeZoomEditor = makeEditor(
+  "zoom",
+  () => Math.ceil(40 * Math.random()) / 10
+);
 
 const CenterEditor = makeEditor("center", () => [
   Math.ceil(4 * Math.random()) / 5,
@@ -51,7 +60,22 @@ class Demo extends Component {
     ];
     if (glImageProps.resizeMode === "cover") {
       editors.push(
-        <ZoomEditor
+        <CoverZoomEditor
+          key="zoom"
+          value={glImageProps.zoom}
+          onChange={onZoomChange}
+        />
+      );
+      editors.push(
+        <CenterEditor
+          key="center"
+          value={glImageProps.center}
+          onChange={onCenterChange}
+        />
+      );
+    } else if (glImageProps.resizeMode === "free") {
+      editors.push(
+        <FreeZoomEditor
           key="zoom"
           value={glImageProps.zoom}
           onChange={onZoomChange}
