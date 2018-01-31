@@ -174,7 +174,7 @@ export default class GLImage extends React.Component {
           shader={resizeMode === "cover" ? shaders.cover : shaders.free}
           uniforms={{
             t: source,
-            tR: sizeRation ? sizeRatio : Uniform.textureSizeRatio(source),
+            tR: sizeRatio ? sizeRatio : Uniform.textureSizeRatio(source),
             res: Uniform.Resolution,
             center,
             zoom
@@ -190,7 +190,7 @@ export default class GLImage extends React.Component {
           shader={shaders.contain}
           uniforms={{
             t: source,
-            tR: sizeRation ? sizeRatio : Uniform.textureSizeRatio(source),
+            tR: sizeRatio? sizeRatio : Uniform.textureSizeRatio(source),
             res: Uniform.Resolution
           }}
         />
