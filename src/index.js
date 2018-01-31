@@ -7,7 +7,7 @@ import {
   LinearCopy,
   Uniform
 } from "gl-react";
-import React, { Component } from "react";
+import * as React from "react";
 
 const shaders = Shaders.create({
   contain: {
@@ -135,7 +135,7 @@ void main () {
   }
 });
 
-export default class GLImage extends Component {
+export default class GLImage extends React.Component {
   props:
     | {
         source: any,
