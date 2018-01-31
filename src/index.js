@@ -139,16 +139,19 @@ export default class GLImage extends React.Component {
   props:
     | {
         source: any,
+        sizeRatio?: number,
         resizeMode: "cover" | "free",
         center?: [number, number],
         zoom?: number
       }
     | {
         source: any,
+        sizeRatio?: number,
         resizeMode: "contain"
       }
     | {
         source: any,
+        sizeRatio?: number,
         resizeMode: "stretch"
       };
 
@@ -158,7 +161,7 @@ export default class GLImage extends React.Component {
 
   render() {
     const { props } = this;
-    const { source, resizeMode, ...rest } = props;
+    const { source, resizeMode, sizeRatio, ...rest } = props;
 
     if (resizeMode === "cover" || resizeMode === "free") {
       const center = props.center || [0.5, 0.5];
@@ -171,7 +174,7 @@ export default class GLImage extends React.Component {
           shader={resizeMode === "cover" ? shaders.cover : shaders.free}
           uniforms={{
             t: source,
-            tR: Uniform.textureSizeRatio(source),
+            tR: sizeRation ? sizeRatio : Uniform.textureSizeRatio(source),
             res: Uniform.Resolution,
             center,
             zoom
@@ -187,7 +190,7 @@ export default class GLImage extends React.Component {
           shader={shaders.contain}
           uniforms={{
             t: source,
-            tR: Uniform.textureSizeRatio(source),
+            tR: sizeRation ? sizeRatio : Uniform.textureSizeRatio(source),
             res: Uniform.Resolution
           }}
         />
