@@ -7,7 +7,7 @@ import {
   LinearCopy,
   Uniform
 } from "gl-react";
-import React, { Component } from "react";
+import * as React from "react";
 
 const shaders = Shaders.create({
   contain: {
@@ -143,20 +143,23 @@ void main () {
   }
 });
 
-export default class GLImage extends Component {
+export default class GLImage extends React.Component {
   props:
     | {
         source: any,
+        sizeRatio?: number,
         resizeMode: "cover" | "free",
         center?: [number, number],
         zoom?: number
       }
     | {
         source: any,
+        sizeRatio?: number,
         resizeMode: "contain"
       }
     | {
         source: any,
+        sizeRatio?: number,
         resizeMode: "stretch"
       };
 
@@ -166,7 +169,7 @@ export default class GLImage extends Component {
 
   render() {
     const { props } = this;
-    const { source, resizeMode, ...rest } = props;
+    const { source, resizeMode, sizeRatio, ...rest } = props;
 
     if (resizeMode === "cover" || resizeMode === "free") {
       const center = props.center || [0.5, 0.5];
@@ -179,7 +182,7 @@ export default class GLImage extends Component {
           shader={resizeMode === "cover" ? shaders.cover : shaders.free}
           uniforms={{
             t: source,
-            tR: Uniform.textureSizeRatio(source),
+            tR: sizeRatio ? sizeRatio : Uniform.textureSizeRatio(source),
             res: Uniform.Resolution,
             center,
             zoom
@@ -195,7 +198,7 @@ export default class GLImage extends Component {
           shader={shaders.contain}
           uniforms={{
             t: source,
-            tR: Uniform.textureSizeRatio(source),
+            tR: sizeRatio? sizeRatio : Uniform.textureSizeRatio(source),
             res: Uniform.Resolution
           }}
         />

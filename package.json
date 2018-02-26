@@ -8,7 +8,7 @@
     "prepublish": "npm run compile"
   },
   "peerDependencies": {
-    "gl-react": ">= 3.13.0"
+    "gl-react": ">= 3.1.0"
   },
   "devDependencies": {
     "babel-cli": "6",
