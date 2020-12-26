@@ -3,11 +3,11 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "gl-react": "next",
-    "gl-react-dom": "next",
+    "gl-react": "*",
+    "gl-react-dom": "*",
     "gl-react-image": "file:..",
-    "react": "next",
-    "react-dom": "next"
+    "react": "*",
+    "react-dom": "*"
   },
   "devDependencies": {
     "react-scripts": "1.0.12"
